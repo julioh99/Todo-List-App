@@ -29,14 +29,14 @@ body {
     display: flex;
 }
 
-@media (min-width:768px) {
+/* @media (min-width:768px) {
     .wrapper {
         height: 50rem;
         width: 25rem;
         border-radius: 40px;
         border: 10px solid #2e2e2e;
     }
-}
+} */
 
 .wrapper .screen {
     min-width: 100%;

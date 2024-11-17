@@ -220,6 +220,7 @@ const renderCategories = () => {
       (task) => task.category.toLowerCase() === category.title.toLowerCase()
     );
     const div = document.createElement("div");
+    const taskCompleted = categoryTasks.filter((task)=> task.completed === true)
     div.classList.add("category");
     div.addEventListener("click", () => {
       screenWrapper.classList.toggle("show-category");
@@ -237,7 +238,7 @@ const renderCategories = () => {
                   />
                 <div class="content">
                   <h1>${category.title}</h1>
-                  <p>${categoryTasks.length} Tasks</p>
+                  <p>${taskCompleted.length} / ${categoryTasks.length} Tasks</p>
                 </div>
               </div>
               <div class="options">
@@ -287,6 +288,7 @@ const renderTasks = () => {
         const index = tasks.findIndex((t) => t.id === task.id);
         tasks[index].completed = !tasks[index].completed;
         saveLocal();
+        renderTasks();
       });
       div.innerHTML = `
       <div class="delete">
