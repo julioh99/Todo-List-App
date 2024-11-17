@@ -187,7 +187,7 @@ let tasks = [
   },
   // Add more tasks for each category as desired
 ];
-
+let intoCategory = null;
 // Define functions
 const saveLocal = () => {
   localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -349,6 +349,8 @@ const toggleAddTaskForm = () => {
   addTaskWrapper.classList.toggle("active");
   blackBackdrop.classList.toggle("active");
   addTaskBtn.classList.toggle("active");
+  categorySelect.value = selectedCategory.title.toLowerCase()
+  taskInput.focus()
 };
 
 const addTask = (e) => {
